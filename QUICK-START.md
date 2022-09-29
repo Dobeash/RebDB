@@ -29,7 +29,7 @@ Alternatively, load the RebDB scripts by starting a console session and typing `
 	SQL> commit my-table
 
 	repeat i 10 [
-		db-insert my-table reduce [i 11-Jan-2004 " i join "Note-" i]
+	    db-insert my-table reduce [i 11-Jan-2004 " i join "Note-" i]
 	]
 
 	db-commit my-table
