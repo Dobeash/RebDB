@@ -135,7 +135,7 @@ Returns true if table exists.
 
 Information about currently open tables.
 
-tables
+	tables
 
 ## Aggregation
 
@@ -177,7 +177,7 @@ The having clause is similar to a where clause except it is applied to the aggre
 
 Condition    | Usage
 ------------ | -------------------------------------------------------------------
-Arithmetic   | column {= <> < > <= >=} value                                      
+Arithmetic   | column {= <> < > <= >=} value
 True / False | {zero? odd? even? none? empty?} column<br>{string? integer?} column
 Search       | find column string<br>find [values] column
 Not          | not condition
@@ -188,18 +188,18 @@ And / Or     | {any all} [conditions]
 Value   | Usage
 ------- | ------------------------------------------------------
 String  | A sequence of characters delimited with double quotes.
-Integer | A whole number.                                       
-Decimal | A number with at least one decimal place.             
-Date    | A date in the form **DD-MON-YYYY**.                   
-Money   | A dollars and cents amount.                           
+Integer | A whole number.
+Decimal | A number with at least one decimal place.
+Date    | A date in the form **DD-MON-YYYY**.
+Money   | A dollars and cents amount.
 
 ## Expressions
 
-Expression | Usage                                                    
+Expression | Usage
 ---------- | ---------------------------------------------------------
 Arithmetic | column {+ - / // **} value<br>column {+ - / // **} column
-Positional | {first second third last} column<br>pick column position 
-String     | (uppercase lowercase} column<br>copy/part column length  
+Positional | {first second third last} column<br>pick column position
+String     | (uppercase lowercase} column<br>copy/part column length
 
 ## SQL Client
 
@@ -213,12 +213,12 @@ An SQL statement, such as a select, which is sent to the database for processing
 
 A command that is processed by the client. The following commands are supported.
 
-Command | Description                                                                                  | Usage                       
+Command | Description                                                                                  | Usage
 ------- | -------------------------------------------------------------------------------------------- | ----------------------------
 Echo    | A line commencing with the echo command will display the string that follows it.             | SQL> echo "Have a nice day."
-Exit    | Exit a client by clicking the close icon of the window or typing exit at the console prompt. | SQL> exit                   
-Help    | Typing help will display a concise summary of available statements, commands and settings.   | SQL> help                   
-Run     | Typing #run script# at the console prompt will run the nominated script.                     | SQL> run login.sql          
+Exit    | Exit a client by clicking the close icon of the window or typing exit at the console prompt. | SQL> exit
+Help    | Typing help will display a concise summary of available statements, commands and settings.   | SQL> help
+Run     | Typing #run script# at the console prompt will run the nominated script.                     | SQL> run login.sql
 Set     | Typing set followed by a setting and value will change the setting, while entering set by itself will display the current settings. | SQL> set username Bob
 
 ### Settings
