@@ -243,7 +243,7 @@ These allow you to comment your scripts and / or "comment out" a statement that 
 
 ## SQL Scripts
 
-An SQL script is a text file with a .sql extension. The SQL client runs these scripts by reading and executing each line in turn until no more lines are present or an error is encountered.
+An SQL script is a text file with a `.sql` extension. The SQL client runs these scripts by reading and executing each line in turn until no more lines are present or an error is encountered.
 
 ### login.sql
 
