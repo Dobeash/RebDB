@@ -53,18 +53,18 @@ Let's create some tables:
 then populate them with some test data:
 
 	repeat i 100 [
-		sql reduce ["insert into Customers values [:1 {:2} {:3}]" i join "Name " i join "Address " i]
+	    sql reduce ["insert into Customers values [:1 {:2} {:3}]" i join "Name " i join "Address " i]
 	]
 
 	p: 0
 	repeat i 100 [
-		repeat j 10 [
-			sql reduce ["insert into Orders values [:1 :2 :3]" i now/date + i p: p + 1]
-		]
+	    repeat j 10 [
+	        sql reduce ["insert into Orders values [:1 :2 :3]" i now/date + i p: p + 1]
+	    ]
 	]
 
 	repeat i 10000 [
-		sql reduce ["insert into Items values [:1 {:2} $1.99 1 $1.99]" i join "Description " i]
+	    sql reduce ["insert into Items values [:1 {:2} $1.99 1 $1.99]" i join "Description " i]
 	]
 
 Now for some joins:
@@ -82,14 +82,12 @@ This release corrects a critical flaw with multi-column `distinct` use.
 
 ## DISTINCT clause with multiple columns
 
-Due to the way in which REBOL handles unique/skip, RebDB `select` statements that used the `distinct` clause and returned more than one column may have returned a subset of the correct rows. The following REBOL code demonstrates this problem:
+Due to the way in which Rebol handles unique/skip, RebDB `select` statements that used the `distinct` clause and returned more than one column may have returned a subset of the correct rows. The following Rebol code demonstrates this problem:
 
-```
->> unique/skip [1 "A" 1 "B"] 2
-== [1 "A"]
->> unique/skip ["A" 1 "B" 1] 2
-== ["A" 1 "B" 1]
-```
+	>> unique/skip [1 "A" 1 "B"] 2
+	== [1 "A"]
+	>> unique/skip ["A" 1 "B" 1] 2
+	== ["A" 1 "B" 1]
 
 RebDB v2.0.2 no longer uses `unique/skip`.
 
@@ -105,7 +103,7 @@ By default, RebDB data files are now formatted with one row of data per line. Yo
 
 ### Browser
 
-The `set browser` option has been removed as the REBOL `set-browser-path` function has been depreciated.
+The `set browser` option has been removed as the Rebol `set-browser-path` function has been depreciated.
 
 ### Lines
 
@@ -127,27 +125,21 @@ This release is a maintenance release with one major enhancement: automatic log 
 
 RebDB now automatically applies all log files at startup. You can see this behaviour for yourself by issuing the following statements:
 
-```
-SQL> create test [col]
-SQL> insert into test values [0]
-SQL> exit
-```
+	SQL> create test [col]
+	SQL> insert into test values [0]
+	SQL> exit
 
 and then restart the SQL client to see the following replay messages:
 
-```
-Replaying 1 change(s).
-insert into test values [0]
-Replay completed.
-```
+	Replaying 1 change(s).
+	insert into test values [0]
+	Replay completed.
 
 ## SQL client error messages
 
-Underlying REBOL errors (e.g. math overflow) are now trapped and displayed correctly. The following statements demonstrate this:
+Underlying Rebol errors (e.g. math overflow) are now trapped and displayed correctly. The following statements demonstrate this:
 
-```
-SQL> create test [col]
-SQL> insert into test values [2000000000]
-SQL> insert into test values [2000000000]
-SQL> select sum col from test
-```
+	SQL> create test [col]
+	SQL> insert into test values [2000000000]
+	SQL> insert into test values [2000000000]
+	SQL> select sum col from test
