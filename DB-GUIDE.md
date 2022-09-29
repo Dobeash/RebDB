@@ -307,7 +307,7 @@ The SQL client, depicted below, expects the `explain` token to precede the state
 
 	Seq Step  Type     Time
 	--- ----- -------- ----
-	1 Open  my-table 0:00
-	2 Fetch *        0:00
+	1   Open  my-table 0:00
+	2   Fetch *        0:00
 
 	2 row(s) selected in 0:00 seconds
