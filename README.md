@@ -11,7 +11,9 @@ RebDB is a small but highly efficient RDBMS written entirely in Rebol/Base synta
 - **No indexes** - RebDB loads an entire table into memory and ensures it is sorted when needed. This simple technique makes indexes redundant as RebDB is able to directly access rows in large chunks!
 - **No locking** - RebDB serializes all requests. Not having to worry about locking means we can crunch through statements at a far greater rate.
 
-# Further Information
+## Documentation
+
+> Updated 7-Sep-2008
 
 - **QUICK-START.md** runs through some simple examples to get you started quickly.
 - **DB-GUIDE.md** describes the design and operation of RebDB.
