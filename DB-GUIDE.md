@@ -8,12 +8,12 @@ RebDB is a simple yet powerful SQL-like database written entirely in Rebol/Base 
 
 ### Distribution Scripts
 
-| Script      | Description |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| db.r        | Defines the main workings of RebDB in a single context named `db`. A number of accessor functions, all prefixed with `db-`, are exported to the global context for easy reference. |
-| db-client.r | Implements the `db-request` function used by remote clients, and provides the `sql` function for easy database access. |
-| SQL.r       | Starts up a console SQL client. |
-| login.sql   | Used by the SQL client to initialize various settings. |
+Script      | Description
+----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+db.r        | Defines the main workings of RebDB in a single context named `db`. A number of accessor functions, all prefixed with `db-`, are exported to the global context for easy reference.
+db-client.r | Implements the `db-request` function used by remote clients, and provides the `sql` function for easy database access.
+SQL.r       | Starts up a console SQL client.
+login.sql   | Used by the SQL client to initialize various settings.
 
 ## Storage Architecture
 
@@ -55,7 +55,7 @@ Now create a block to hold your data.
 Then write a simple loop that appends your values to this block.
 
 	repeat i 100000 [
-		insert tail blk reduce [i 1-Jan-2004 - to-integer i / 100 join "Note-" i]
+	    insert tail blk reduce [i 1-Jan-2004 - to-integer i / 100 join "Note-" i]
 	]
 
 Now we just need to write the data to disk and verify that RebDB likes it.
@@ -269,9 +269,9 @@ It is commonly used in a *cursor*, as in the following code:
 
 	cursor: db-select rowid my-table
 	foreach rowid cursor [
-		print reform [
-			db-select/where * my-table compose [rowid = (rowid)]
-		]
+	    print reform [
+	        db-select/where * my-table compose [rowid = (rowid)]
+	    ]
 	]
 
 ### Star "*" Expansion
