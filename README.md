@@ -1,4 +1,6 @@
-# RebDB
+# RebDB v2.0.3
+
+> Updated 13-Apr-2007
 
 RebDB is a small but highly efficient RDBMS written entirely in Rebol/Base syntax, meaning that it will run on any platform that Rebol/Core runs on.
 
@@ -15,6 +17,7 @@ RebDB is a small but highly efficient RDBMS written entirely in Rebol/Base synta
 
 > Updated 7-Sep-2008
 
-- **QUICK-START.md** runs through some simple examples to get you started quickly.
-- **DB-GUIDE.md** describes the design and operation of RebDB.
-- **SQL-GUIDE.md** describes the SQL syntax used by RebDB.
+- [Release Notes](CHANGES.md) - Describes changes made for each release.
+- [Quick Start Guide](QUICK-START.md) - Runs through some simple examples to get you started quickly.
+- [DB Guide](DB-GUIDE.md) - Describes the design and operation of RebDB.
+- [SQL Guide](SQL-GUIDE.md) - Describes the SQL syntax used by RebDB.
